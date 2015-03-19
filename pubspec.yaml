@@ -5,6 +5,7 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
   browser: any
-  uix: any
+  uix:
+    git: 'https://github.com/localvoid/uix'
 dev_dependencies:
   unittest: any

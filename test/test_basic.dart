@@ -6,6 +6,7 @@ import 'package:uix_example_tests/components/basic.dart';
 
 void main() {
   useHtmlEnhancedConfiguration();
+  initUix();
 
   group('Basic Component', () {
     test('Hello World', () {
