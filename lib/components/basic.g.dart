@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// 2015-03-22T09:42:45.543Z
+// 2015-03-22T11:18:27.125Z
 
 part of app.components.basic;
 
@@ -8,8 +8,10 @@ part of app.components.basic;
 // Target: class Basic
 // **************************************************************************
 
-Basic createBasic([String data]) {
-  final r = new Basic()..data = data;
+Basic createBasic([String data, Component parent]) {
+  final r = new Basic()
+    ..parent = parent
+    ..data = data;
   r.init();
   return r;
 }
@@ -30,8 +32,10 @@ VNode vBasic({String data, Object key, String type, Map<String, String> attrs,
 // Target: class ComponentWithEvents
 // **************************************************************************
 
-ComponentWithEvents createComponentWithEvents([String data]) {
-  final r = new ComponentWithEvents()..data = data;
+ComponentWithEvents createComponentWithEvents([String data, Component parent]) {
+  final r = new ComponentWithEvents()
+    ..parent = parent
+    ..data = data;
   r.init();
   return r;
 }
