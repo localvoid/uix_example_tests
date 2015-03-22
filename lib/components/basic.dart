@@ -6,7 +6,7 @@ part 'basic.g.dart';
 
 @ComponentMeta()
 class Basic extends Component<String> {
-  build() => vRoot()('Hello ${data}');
+  updateView() { updateRoot(vRoot()('Hello ${data}')); }
 }
 
 @ComponentMeta()
@@ -22,5 +22,5 @@ class ComponentWithEvents extends Component<String> {
     invalidate();
   }
 
-  build() => vRoot()(_counter.toString());
+  updateView() { updateRoot(vRoot()(_counter.toString())); }
 }

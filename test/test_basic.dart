@@ -23,7 +23,7 @@ void main() {
       expect(f.innerHtml, equals('<div>0</div>'));
     });
 
-    test ('Click', () async {
+    test('Click', () async {
       final f = new html.DocumentFragment();
       final c = createComponentWithEvents();
       injectComponent(c, f);

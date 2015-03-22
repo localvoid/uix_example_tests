@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// 2015-03-20T09:55:27.817Z
+// 2015-03-22T09:42:45.543Z
 
 part of app.components.basic;
 
@@ -10,6 +10,7 @@ part of app.components.basic;
 
 Basic createBasic([String data]) {
   final r = new Basic()..data = data;
+  r.init();
   return r;
 }
 VNode vBasic({String data, Object key, String type, Map<String, String> attrs,
@@ -31,6 +32,7 @@ VNode vBasic({String data, Object key, String type, Map<String, String> attrs,
 
 ComponentWithEvents createComponentWithEvents([String data]) {
   final r = new ComponentWithEvents()..data = data;
+  r.init();
   return r;
 }
 VNode vComponentWithEvents({String data, Object key, String type,
