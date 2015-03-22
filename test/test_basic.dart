@@ -9,17 +9,17 @@ void main() {
   initUix();
 
   group('Basic Component', () {
-    test('Hello World', () {
+    test('Hello World', () async {
       final f = new html.DocumentFragment();
-      injectComponent(createBasic('World'), f);
+      await injectComponent(createBasic('World'), f);
       expect(f.innerHtml, equals('<div>Hello World</div>'));
     });
   });
 
   group('Component with Events', () {
-    test('Init', () {
+    test('Init', () async {
       final f = new html.DocumentFragment();
-      injectComponent(createComponentWithEvents(), f);
+      await injectComponent(createComponentWithEvents(), f);
       expect(f.innerHtml, equals('<div>0</div>'));
     });
 
