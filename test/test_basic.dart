@@ -26,7 +26,8 @@ void main() {
     test('Click', () async {
       final f = new html.DocumentFragment();
       final c = createComponentWithEvents();
-      injectComponent(c, f);
+      await injectComponent(c, f);
+      await scheduler.nextTick;
       c.element.click();
       await scheduler.nextFrame.after();
       expect(f.innerHtml, equals('<div>1</div>'));
