@@ -9,3 +9,6 @@ dependencies:
     git: 'https://github.com/localvoid/uix'
 dev_dependencies:
   unittest: any
+dependency_overrides:
+  uix:
+    path: ../uix

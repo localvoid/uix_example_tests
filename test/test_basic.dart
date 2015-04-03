@@ -11,7 +11,7 @@ void main() {
   group('Basic Component', () {
     test('Hello World', () async {
       final f = new html.DocumentFragment();
-      await injectComponent(createBasic('World'), f);
+      await injectComponent(new Basic()..data = 'World', f);
       expect(f.innerHtml, equals('<div>Hello World</div>'));
     });
   });
@@ -19,13 +19,13 @@ void main() {
   group('Component with Events', () {
     test('Init', () async {
       final f = new html.DocumentFragment();
-      await injectComponent(createComponentWithEvents(), f);
+      await injectComponent(new ComponentWithEvents(), f);
       expect(f.innerHtml, equals('<div>0</div>'));
     });
 
     test('Click', () async {
       final f = new html.DocumentFragment();
-      final c = createComponentWithEvents();
+      final c = new ComponentWithEvents();
       await injectComponent(c, f);
       await scheduler.nextTick;
       c.element.click();
