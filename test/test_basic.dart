@@ -2,7 +2,25 @@ import 'dart:html' as html;
 import 'package:unittest/unittest.dart';
 import 'package:unittest/html_enhanced_config.dart';
 import 'package:uix/uix.dart';
-import 'package:uix_example_tests/components/basic.dart';
+
+class Basic extends Component<String> {
+  updateView() { updateRoot(vRoot()('Hello ${data}')); }
+}
+
+class ComponentWithEvents extends Component<String> {
+  int _counter = 0;
+
+  init() {
+    element.onClick.listen(_handleClick);
+  }
+
+  void _handleClick(e) {
+    _counter++;
+    invalidate();
+  }
+
+  updateView() { updateRoot(vRoot()(_counter.toString())); }
+}
 
 void main() {
   useHtmlEnhancedConfiguration();
