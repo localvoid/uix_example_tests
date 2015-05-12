@@ -1,6 +1,7 @@
+@TestOn('browser')
+
 import 'dart:html' as html;
-import 'package:unittest/unittest.dart';
-import 'package:unittest/html_enhanced_config.dart';
+import 'package:test/test.dart';
 import 'package:uix/uix.dart';
 
 class Basic extends Component<String> {
@@ -23,13 +24,13 @@ class ComponentWithEvents extends Component<String> {
 }
 
 void main() {
-  useHtmlEnhancedConfiguration();
   initUix();
 
   group('Basic Component', () {
     test('Hello World', () async {
       final f = new html.DocumentFragment();
-      await injectComponent(new Basic()..data = 'World', f);
+      injectComponent(new Basic()..data = 'World', f);
+      await scheduler.nextFrame.after();
       expect(f.innerHtml, equals('<div>Hello World</div>'));
     });
   });
@@ -37,7 +38,8 @@ void main() {
   group('Component with Events', () {
     test('Init', () async {
       final f = new html.DocumentFragment();
-      await injectComponent(new ComponentWithEvents(), f);
+      injectComponent(new ComponentWithEvents(), f);
+      await scheduler.nextFrame.after();
       expect(f.innerHtml, equals('<div>0</div>'));
     });
 

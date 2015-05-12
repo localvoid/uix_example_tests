@@ -8,4 +8,4 @@ dependencies:
   uix:
     git: 'https://github.com/localvoid/uix'
 dev_dependencies:
-  unittest: any
+  test: any
